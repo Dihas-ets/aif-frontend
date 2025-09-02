@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement Confirmé - Formation Diha's</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        .receipt-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #e82c25 0%, #ff5c56 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .receipt-body {
+            padding: 30px;
+        }
+        .success-icon {
+            font-size: 5rem;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+        .receipt-details {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+        }
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        .home-btn {
+            color: #6c757d;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        .home-btn:hover {
+            color: #2575fc;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .highlight {
+            color: #2575fc;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="receipt-container">
+            <div class="header">
+                <div class="logo">Académie Internationale de Freelancing</div>
+                <p>Merci pour votre inscription à notre formation</p>
+            </div>
+            
+            <div class="receipt-body text-center">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                
+                <h2 class="mb-4">Votre paiement a été traité avec succès !</h2>
+                
+                <h4 class="mt-5">Rejoignez notre groupe WhatsApp pour la formation</h4>
+                <p>Échangez avec les autres participants et recevez les informations en temps réel</p>
+                
+                <a href="https://wa.me/33123456789" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp me-2" style="font-size: 1.5rem;"></i>
+                    Rejoindre le groupe WhatsApp
+                </a>
+                
+                <div>
+                    <a href="/" class="home-btn">
+                        <i class="fas fa-arrow-left me-2"></i>Retour à la page d'accueil
+                    </a>
+        2        </div>
+            </div>
+            
+            <div class="footer">
+                <p>Des questions ? Contactez-nous à <span class="highlight">contact@dihas.tech</span> ou au <span class="highlight">+229 0194975451</span></p>
+                <p>© 2025 Académie Internationale de Freelancing. Tous droits réservés.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

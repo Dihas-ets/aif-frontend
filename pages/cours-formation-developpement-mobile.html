@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <!--====== Required meta tags ======-->
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--====== Title ======-->
+        <title>AIF - Formation Flutter en Présentiel - Développement Mobile</title>
+        <!--====== Favicon Icon ======-->
+        <link rel="shortcut icon" href="../assets/images/logo.png" type="image/png">
+        <!--====== Google Fonts ======-->
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+        <!--====== FlatIcon css ======-->
+        <link rel="stylesheet" href="../common/fonts/flaticon/flaticon_edufit.css">
+        <!--====== FontAwesome css ======-->
+        <link rel="stylesheet" href="../common/fonts/fontawesome/css/all.min.css">
+        <!--====== Bootstrap css ======-->
+        <link rel="stylesheet" href="../common/css/plugins/bootstrap.min.css">
+        <!--====== Slick-popup css ======-->
+        <link rel="stylesheet" href="../common/css/plugins/slick.css">
+        <!--====== Magnific-popup css ======-->
+        <link rel="stylesheet" href="../common/css/plugins/magnific-popup.css">
+        <!--====== Animate css ======-->
+        <link rel="stylesheet" href="../common/css/plugins/aos.css">
+        <!--====== Default css ======-->
+        <link rel="stylesheet" href="../common/css/default.css">
+        <!--====== Common Style css ======-->
+        <link rel="stylesheet" href="../common/css/common_style.css">
+        <!--====== Style css ======-->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+         <style>
+        :root {
+            --primary: #e82c25;
+            --primary-light: #ff5c56;
+            --primary-dark: #c01a14;
+            --secondary: #2c3e50;
+            --accent: #f39c12;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+      
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .back-btn i {
+            margin-right: 8px;
+        }
+        
+        .course-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 992px) {
+            .course-detail {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .course-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            position: relative;
+        }
+        
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .presentiel-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .course-info {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-title {
+            font-size: 28px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .course-subtitle {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .course-instructor {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .instructor-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 3px solid var(--primary);
+        }
+        
+        .instructor-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .instructor-name {
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .instructor-title {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .course-description {
+            margin-bottom: 25px;
+            color: #495057;
+            line-height: 1.8;
+        }
+        
+        .course-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            background: var(--light);
+            padding: 12px 15px;
+            border-radius: 8px;
+        }
+        
+        .meta-item i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .location-info {
+            background: #fff4f4;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .location-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+        }
+        
+        .location-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .location-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .location-item i {
+            color: var(--primary);
+        }
+        
+        .pricing {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .current-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-right: 15px;
+        }
+        
+        .original-price {
+            font-size: 20px;
+            text-decoration: line-through;
+            color: var(--gray);
+        }
+        
+        .discount-badge {
+            background: var(--accent);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-left: 15px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            flex: 2;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            flex: 1;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--light);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .course-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--dark);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: var(--primary);
+        }
+        
+        .module {
+            margin-bottom: 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .module-header {
+            padding: 15px 20px;
+            background: #f8f9fa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .module-title {
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+        
+        .module-title i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .module-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .module.active .module-content {
+            max-height: 500px;
+            padding: 20px;
+        }
+        
+        .lesson {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .lesson:last-child {
+            border-bottom: none;
+        }
+        
+        .lesson-title {
+            display: flex;
+            align-items: center;
+        }
+        
+        .lesson-title i {
+            margin-right: 10px;
+            color: var(--gray);
+        }
+        
+        .lesson-duration {
+            color: var(--gray);
+        }
+        
+        .reviews {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        
+        .review-item {
+            display: flex;
+            margin-bottom: 25px;
+        }
+        
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .review-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .review-content {
+            flex: 1;
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .reviewer-name {
+            font-weight: 500;
+        }
+        
+        .review-date {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .rating {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--gray);
+            margin-top: 50px;
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .faq-question i {
+            color: var(--primary);
+        }
+        
+        .faq-answer {
+            color: #495057;
+            padding-left: 28px;
+        }
+        
+        .map-container {
+            height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 20px;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .map-container i {
+            font-size: 48px;
+            color: var(--primary);
+        }
+        
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+        
+        .schedule-date {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .schedule-info {
+            text-align: right;
+        }
+        
+        .places-left {
+            display: inline-block;
+            padding: 3px 10px;
+            background: var(--primary-light);
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+
+    </head>
+    <body>
+        <!--====== Start Preloader ======-->
+        <div class="preloader">
+            <div class="loader">
+                <img src="../assets/images/logo.png" style="width: 150px;" alt="loader">
+            </div>
+        </div><!--====== End Preloader ======-->
+        <!--====== Start Overlay ======-->
+        <div class="offcanvas__overlay"></div>
+        <!--====== Search From ======-->
+		<div class="modal fade search-modal" id="search-modal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <form>
+                        <div class="form-group">
+                        	<input type="search" class="form_control" placeholder="Search here" name="search">
+                        	<label><i class="fa fa-search"></i></label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!--====== Search From ======-->
+
+        <!--===  Header Area  ===-->
+        <header class="header-area header-one">
+            <!--====  Header Top  ===-->
+            <div class="header-top">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!--===  Top Bar Left  ===-->
+                            <div class="top-left">
+                                <span><i class="flaticon-email"></i><a href="mailto:academie.inter@gmail.com">academie.inter@gmail.com</a></span>
+                                <span><i class="flaticon-pin-map"></i>Calavi Tankpê</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <!--===  Top Bar Right  ===-->
+                            <div class="top-right">
+                                <!--===  Dropdown  ===-->
+                                <div class="edufit-dropdown language-dropdown">
+                                    <a href="javascript:void(0)">Francais<i class="far fa-angle-down"></i></a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="javascript:void(0)">Anglais</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+                                <!--===  Dropdown  ===-->
+                                <div class="edufit-dropdown currency-dropdown">
+                                    <a href="javascript:void(0)">Fcfa <i class="far fa-angle-down"></i></a>
+                                    <ul class="dropdown">
+                                        <li>
+                                            <a href="javascript:void(0)">EU</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">Dollars</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--====  Header Navigation  ===-->
+            <div class="header-navigation">
+                <div class="container-fluid">
+                    <!--====  Header Nav Inner  ===-->
+                    <div class="nav-inner-menu">
+                        <!--====  Primary Menu  ===-->
+                        <div class="primary-menu">
+                            <!--====  Site Branding  ===-->
+                            <div class="site-branding">
+                                <a href="/" class="brand-logo"><img src="../assets/images/logo.png" style="height: 100px;" alt="Brand Logo"></a>
+                            </div>
+                            <!--=== Edufit Main Menu ===-->
+                            <div class="edufit-nav-menu">
+                                <!--=== Edufit Menu Top ===-->
+                                <div class="edufit-menu-top d-flex justify-content-between d-block d-xl-none">
+                                    <div class="site-branding">
+                                        <a href="/" class="brand-logo"><img src="../assets/images/logo.png" alt="Brand Logo"></a>
+                                    </div>
+                                    <div class="navbar-close">
+                                        <i class="far fa-times"></i>
+                                    </div>
+                                </div>
+                                <!--=== Main Menu ===-->
+                                <nav class="main-menu">
+                                    <ul>
+                                        <li><a href="/">Accueil</a></li>
+                                        <li class="menu-item has-children"><a href="#">Formation</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="en_construction.html">Standart</a></li>
+                                                <li><a href="en_construction.html">Bourse</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="../pages/about.html">A Propos</a></li>
+                                        <li><a href="../pages/blog-grid.html">Blog</a></li>
+                                        <li class="menu-item"><a href="../pages/contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                                <!--=== Edufit Nav Button ===-->
+                                <div class="edufit-nav-button d-block d-xl-none mt-40">
+                                    <a href="en_construction.html" class="theme-btn style-one">Connexion</a>
+                                    <a href="en_construction.html" class="theme-btn style-two">Inscription</a>
+                                </div>
+                            </div>
+                            <!--=== Header Nav Right ===-->
+                            <div class="nav-right-item">
+                                <div class="search-btn">
+                                    <button class="icon" data-bs-toggle="modal" data-bs-target="#search-modal"><i class="far fa-search"></i></button>
+                                </div>
+                                <div class="nav-button d-none d-xl-block">
+                                    <a href="en_construction.html" class="theme-btn style-one">Connexion</a>
+                                    <a href="en_construction.html" class="theme-btn style-two">Inscription</a>
+                                </div>
+                                <div class="navbar-toggler">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header><!--====== End Header Area  ======-->
+
+       
+        
+        <div class="container">
+        
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Retour aux formations
+        </a>
+        
+        <div class="course-detail">
+            <div class="course-image">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Formation Flutter">
+                <div class="presentiel-badge">
+                    <i class="fas fa-user-friends"></i> Formation en présentiel
+                </div>
+            </div>
+            
+            <div class="course-info">
+                <h1 class="course-title">Développement d'Applications Mobile avec Flutter</h1>
+                <p class="course-subtitle">Formation intensive en présentiel -Calavi</p>
+                
+                <div class="course-instructor">
+                    <div class="instructor-avatar">
+                        <img src="../assets/images/logo.png" alt="Instructeur">
+                    </div>
+                    <div>
+                        <div class="instructor-name">Gafour YEKINI</div>
+                        <div class="instructor-title">Développeur Mobile Senior </div>
+                    </div>
+                </div>
+                
+                <p class="course-description">
+                    Maîtrisez Flutter et Dart pour créer des applications mobiles cross-platform performantes et élégantes. Cette formation intensive en présentiel vous permettra d'apprendre dans un environnement collaboratif avec un expert pour vous guider. Vous développerez une application complète tout au long de la formation.
+                </p>
+                
+                <div class="location-info">
+                    <div class="location-title">
+                        <i class="fas fa-map-marker-alt"></i> Lieu de formation
+                    </div>
+                    <p>Diha's - Calavi allegeta non loin du carrefour des fruits</p>
+                </div>
+                
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="far fa-clock"></i>
+                        <span>3 mois intensifs </span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>15 participants maximum</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>Ordinateur requis</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Certification incluse</span>
+                    </div>
+                </div>
+                
+                <div class="pricing">
+                    <div class="current-price">50,000 Fcfa</div>
+                    <div class="original-price">250.000 Fcfa</div>
+                    <div class="discount-badge">Économisez 200.000 Fcfa</div>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="" class="btn btn-primary">
+                        <i class="fas fa-shopping-cart"></i> Réserver ma place
+                    </a>
+                    <a href="https://wa.me/22994975451" class="btn btn-secondary">
+                        <i class="far fa-envelope"></i> Contacter
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="course-content">
+            <h2 class="section-title">
+                <i class="fas fa-calendar-alt"></i> Prochaines dates disponibles
+            </h2>
+            
+            <div class="schedule-item">
+                <div class="schedule-date">
+                    <i class="far fa-calendar"></i> 20 Septembre 2025
+                </div>
+                <div class="schedule-info">
+                    9h00 - 17h00 <span class="places-left">15 places disponibles</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="course-content">
+            <h2 class="section-title">
+                <i class="fas fa-road"></i> Programme de la formation
+            </h2>
+            
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-title">
+                        <i class="fas fa-play-circle"></i> Mois 1: Fondamentaux de Flutter & Dart
+                    </div>
+                    <div>--</div>
+                </div>
+                <div class="module-content">
+                    <div class="lesson">
+                        <div class="lesson-title">
+                            <i class="far fa-play-circle"></i> Introduction à l'environnement Flutter
+                        </div>
+                        <div class="lesson-duration">--</div>
+                    </div>
+                    <div class="lesson">
+                        <div class="lesson-title">
+                            <i class="far fa-play-circle"></i> Syntaxe et concepts de base de Dart
+                        </div>
+                        <div class="lesson-duration">--</div>
+                    </div>
+                    <div class="lesson">
+                        <div class="lesson-title">
+                            <i class="far fa-play-circle"></i> Création des premiers widgets
+                        </div>
+                        <div class="lesson-duration">--</div>
+                    </div>
+                    <div class="lesson">
+                        <div class="lesson-title">
+                            <i class="far fa-play-circle"></i> Atelier pratique: Première application
+                        </div>
+                        <div class="lesson-duration">--</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-title">
+                        <i class="fas fa-play-circle"></i> Mois 2: Interfaces utilisateur avancées
+                    </div>
+                    <div>--</div>
+                </div>
+                <div class="module-content">
+                    <!-- Contenu des leçons -->
+                </div>
+            </div>
+            
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-title">
+                        <i class="fas fa-play-circle"></i> Mois 3: Gestion d'état et persistance des données
+                    </div>
+                    <div>--</div>
+                </div>
+                <div class="module-content">
+                    <!-- Contenu des leçons -->
+                </div>
+            </div>
+
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-title">
+                        <i class="fas fa-play-circle"></i> Mois 4: Projet Pratique
+                    </div>
+                    <div>--</div>
+                </div>
+                <div class="module-content">
+                    <!-- Contenu des leçons -->
+                </div>
+            </div>
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-title">
+                        <i class="fas fa-play-circle"></i> Mois 5: Début Stage
+                    </div>
+                    <div>--</div>
+                </div>
+                <div class="module-content">
+                    <!-- Contenu des leçons -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="course-content">
+            <h2 class="section-title">
+                <i class="fas fa-map-marked-alt"></i> Localisation du centre
+            </h2>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.832704651574!2d2.3248047!3d6.4155368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1024a90005da6c85%3A0xd64be991577180e2!2sDiha&#39;s!5e0!3m2!1sfr!2sbj!4v1756808076044!5m2!1sfr!2sbj" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        
+        <div class="reviews">
+            <h2 class="section-title">
+                <i class="fas fa-star"></i> Avis des participants
+            </h2>
+
+            <div>
+                <h5 style="text-decoration: center; font-weight: bold;" class="text-danger">Aucun avis pour le moment</h5>
+            </div>
+            
+            <div class="review-item d-none">
+                <div class="review-avatar">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Avatar">
+                </div>
+                <div class="review-content">
+                    <div class="review-header">
+                        <div class="reviewer-name">Sophie Leroux</div>
+                        <div class="review-date">Formation suivie en Novembre 2023</div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Formation exceptionnelle ! La petite taille du groupe a permis un accompagnement personnalisé. Thomas est un formateur passionné et passionnant. J'ai pu créer ma première application fonctionnelle dès le 3ème jour.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="course-content">
+            <h2 class="section-title">
+                <i class="fas fa-question-circle"></i> Questions fréquentes
+            </h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="far fa-question-circle"></i> Dois-je apporter mon propre ordinateur ?
+                </div>
+                <div class="faq-answer">Oui, Un ordinateur est requis pour suivre la formation.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="far fa-question-circle"></i> Quel est le nombre maximum de participants ?
+                </div>
+                <div class="faq-answer">Nous limitons volontairement le groupe à 15 participants maximum pour garantir la qualité de l'enseignement et un accompagnement personnalisé.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="far fa-question-circle"></i> Que se passe-t-il si je dois annuler ma participation ?
+                </div>
+                <div class="faq-answer">Vous pouvez annuler sans frais jusqu'à 15 jours avant le début de la formation. Entre 15 et 7 jours avant, 50% du montant sera retenu. Passé ce délai, la totalité de la formation est due. Cependant, vous pouvez vous faire remplacer par une autre personne.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script pour faire fonctionner les accordéons des modules
+        document.querySelectorAll('.module-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const module = header.parentElement;
+                module.classList.toggle('active');
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+        <!--====== Start Footer Area  ======-->
+        <footer class="footer-default">
+            <div class="shape shape-one"><span><img src="../common/images/footer/shape/shape1.png" alt="shape"></span></div>
+            <div class="shape shape-two"><span><img src="../common/images/footer/shape/shape2.png" alt="shape"></span></div>
+            <div class="shape shape-three"><span><img src="../common/images/footer/shape/shape3.png" alt="shape"></span></div>
+            <div class="shape shape-four"><span><img src="../common/images/footer/shape/shape4.png" alt="shape"></span></div>
+            <div class="shape shape-five"><span><img src="../common/images/footer/shape/shape5.png" alt="shape"></span></div>
+            <div class="container">
+                <!--===  Footer Widget Area  ===-->
+                <div class="footer-widget-area pt-120 pb-75">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <!--===  Footer Widget  ===-->
+                            <div class="footer-widget footer-about-widget mb-40" data-aos="fade-up" data-aos-duration="1000">
+                                <div class="footer-content">
+                                    <div class="footer-logo" style="margin-bottom: 0;">
+                                        <a href="/"><img src="../assets/images/logo.png" alt="Brand Logo" style="width: 100px;"></a>
+                                    </div>
+                                    <p>A Académie Internationale de Freelancing, notre mission est d'aider les jeunes à trouver leurs épanouissements professionnels</p>
+                                    <ul class="social-link">
+                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-skype"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-6">
+                            <div class="row">
+                                <div class="col-6">
+                                    <!--===  Footer Widget  ===-->
+                                    <div class="footer-widget footer-nav-widget mb-40" data-aos="fade-up" data-aos-duration="1200">
+                                        <div class="footer-content">
+                                            <h4 class="widget-title">Liens Rapides</h4>
+                                            <ul class="widget-nav">
+                                                <li><a href="#">A Propos</a></li>
+                                                <li><a href="#">Bourses</a></li>
+                                                <li><a href="#">Evenements</a></li>
+                                                <li><a href="#">Blogs</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <!--===  Footer Widget  ===-->
+                                    <div class="footer-widget footer-nav-widget mb-40" data-aos="fade-up" data-aos-duration="1400">
+                                        <div class="footer-content">
+                                            <h4 class="widget-title">Cours</h4>
+                                            <ul class="widget-nav">
+                                                <li><a href="en_construction.html">Développement web</a></li>
+                                                <li><a href="en_construction.html">Développement Mobile</a></li>
+                                                <li><a href="en_construction.html">Design UX/UI - Graphisme</a></li>
+                                                <li><a href="en_construction.html">Développement wordpress</a></li>
+                                                <li><a href="en_construction.html">Marketing Digital</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <!--=== Footer Widget ===-->
+                            <div class="footer-widget footer-newsletter-widget mb-40" data-aos="fade-up" data-aos-duration="1600">
+                                <div class="footer-content">
+                                    <h4 class="widget-title">Souscription au newsletter</h4>
+                                    <p>Souscrivez à notre newsletter pour être informé des nouveautés </p>
+                                    <form>
+                                        <div class="form-group">
+                                            <input type="email" class="form_control" placeholder="Adresse Email" name="email" required>
+                                            <label><i class="far fa-envelope"></i></label>
+                                            <button class="theme-btn style-one sm-btn">Souscrire <i class="far fa-angle-double-right"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--===  Footer Copyright  ===-->
+            <div class="footer-copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!--===  Copyright Text  ===-->
+                            <div class="copyright-text text-center">
+                                <p>&copy; 2025 Tous droits réservés par <span>Académie Internationale de Freelancing.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer><!--====== End Footer Area  ======-->
+        <!--====== Back To Top ======-->
+        <div class="back-to-top"><i class="far fa-arrow-up"></i></div>
+        <!--====== Jquery js ======-->
+        <script src="../common/js/plugins/jquery-3.7.1.min.js"></script>
+        <!--====== Bootstrap js ======-->
+        <script src="../common/js/plugins/popper.min.js"></script>
+        <!--====== Bootstrap js ======-->
+        <script src="../common/js/plugins/bootstrap.min.js"></script>
+        <!--====== Slick js ======-->
+        <script src="../common/js/plugins/slick.min.js"></script>
+        <!--====== Magnific js ======-->
+        <script src="../common/js/plugins/jquery.magnific-popup.min.js"></script>
+        <!--====== Aos js ======-->
+        <script src="../common/js/plugins/aos.js"></script>
+        <!--====== Main js ======-->
+        <script src="../common/js/common_script.js"></script>
+        <!--====== Main js ======-->
+        <script src="assets/js/theme.js"></script>
+    </body>
+</html>
