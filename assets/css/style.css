@@ -74,7 +74,12 @@ Version: 1.0
             color: white;
         }
         
-       
+   .hero-wrapper {
+  position: relative;
+  background-color: #FCFCFF;
+  z-index: 1;
+  padding-top: 50px;
+}    
         
         /* Responsive adjustments */
         @media (max-width: 768px) {         
@@ -85,14 +90,18 @@ Version: 1.0
             .display-4 {
                 font-size: 2.2rem;
             }
+            .hero-wrapper {
+              padding-top: 0px!important;
+            }
+            .padding-zero{
+              padding: 0;
+            }
+            .hero-content{
+              padding: 15px!important;
+            }
         }
 /* Hero Section */
-.hero-wrapper {
-  position: relative;
-  background-color: #FCFCFF;
-  z-index: 1;
-  padding-top: 50px;
-}
+
 .hero-wrapper .elements {
   position: absolute;
   z-index: -1;
@@ -100,6 +109,18 @@ Version: 1.0
 @media screen and (max-width: 991px) {
   .hero-wrapper .elements {
     display: none;
+  }
+  .page-header{
+    padding-bottom: 35px;
+  }
+  .course-button{
+    text-align: center;
+  }
+  .carousel-title, .carousel-description{
+    line-height: normal;
+  }
+  .edufit-image-box.style-two{
+    padding-right: 0;
   }
 }
 .hero-wrapper .elements.element_one {
