@@ -15,6 +15,113 @@ Version: 1.0
   --secondary-color: #c5241e;
 }
 
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .mission, .vision {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission:before, .vision:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--primary-color);
+        }
+        
+        .mission h3, .vision h3 {
+            font-size: 24px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .mission h3 i, .vision h3 i {
+            color: var(--primary-color);
+        }
+        
+        .mission p, .vision p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        .values {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        @media (max-width: 992px) {
+            .values {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .values {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(232, 44, 37, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            color: var(--primary-color);
+        }
+        
+        .value-title {
+            font-size: 20px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .value-description {
+            color: black;
+            line-height: 1.6;
+        }
+        
+
 /*  Page Banner CSS  */
 .ef-page-hero {
   padding: 125px 0 145px;
